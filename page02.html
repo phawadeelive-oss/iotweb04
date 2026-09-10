@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        body{background-color: black;
+        margin: 0;
+        }
+        .n-menu a,i{
+            color:rgb(207,205,205);
+            text-decoration: none;
+        }
+        .n-menu a{
+            font-family: 'IBM Plex Mono';
+        }
+        .n-menu a:hover,i:hover{
+            color: greenyellow;
+            font-weight: bold;
+        }
+        .nav-bar{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 100px;
+            background-color: rgb(74, 74, 74);
+            padding: 25px 100px;
+            border-radius: 0 0 10px 10px;
+        }
+        .n-menu{
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        .n-icon{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .hero-sec{
+            display: flex;
+            align-items: center;
+            margin: 120px 250px 100px 250px;
+            gap: 120px;
+        }
+        .h-info{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        #h-name{
+            color: white;font-family: 'Raleway';
+            font-weight: bold;font-size: 2.5rem;
+        }
+        #h-lorem{
+            color: rgba(207, 205, 205, 0.45);font-family: 'IBM Plex Mono';
+            font-size: 1.2rem;
+        }
+        .h-image img{
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+        button{
+            width: 350px;
+            background-color: rgb(108,161,29);
+            color:white;
+            padding: 30px 0;
+            border :2px solid rgb(127,203,12);
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0px 4px 35px rgba(181, 241, 91, 0.4);
+        }
+        button:hover{
+            background-color: rgb(49, 75, 9);
+            cursor: pointer;
+        }
+        .work-with{ margin-left: 250px;}
+        .work-with span{
+            color: white;
+            font-family: 'IBM Plex Mono';
+            font-size: 1.5rem;
+        }
+        .brand-sec{
+            display: flex;
+            margin: 30px 250px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand-sec a{
+            border: 2px solid rgb(204, 63, 63,0.358);
+            border-radius: 10px;
+            width: 200px;
+            height: 80px;
+            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .brand-sec img{
+            width:100px;
+        }
+        .brand-sec a:hover{
+            border: 2px solid rgb(13,231,126,0.358);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- ส่วนของ navbar -->
+      <div class="nav-bar">
+        <!-- แสดงลิงค์เมนู  -->
+         <div class="n-menu">
+            <a href="#">Home</a>
+            <a href="#">Case Studies</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Recent work</a>
+            <a href="#">Get in Touch</a>
+         </div>
+        <!-- แสดงลิงค์ไอคอน  -->
+         <div class="n-icon">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-behance"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+         </div>
+      </div>
+
+      <!-- ส่วนของ hero section -->
+      <div class="hero-sec">
+        <!-- แสดง Info -->
+         <div class="h-info">
+            <span id="h-name">Phawadee Khaengpenkhae</span>
+            <span id="h-lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga porro molestias, labore, repellendus beatae voluptatum adipisci libero vero asperiores quia voluptas impedit odio explicabo inventore fugiat doloremque voluptate. A, voluptatum.</span>
+            <button>Let's get started</button>
+         </div>
+
+        <!-- แสดง Image -->
+         <div class="h-image">
+            <img src="./images/imagess.png" alt="">
+         </div>
+      </div>
+      <!-- ส่วนของ work with -->
+       <div class="work-with">
+       <span>Work With</span>
+       </div>
+
+
+      <!-- ส่วนของ brand section -->
+        <div class="brand-sec">
+            <a href="#"><img src="./images/logo1.png" alt=""></a>
+            <a href="#"><img src="./images/logo2.png" alt=""></a>
+            <a href="#"><img src="./images/logo3.png" alt=""></a>
+            <a href="#"><img src="./images/logo4.png" alt=""></a>
+            <a href="#"><img src="./images/logo5.png" alt=""></a>
+        </div>
+    </div>
+  </body>
+</html>
