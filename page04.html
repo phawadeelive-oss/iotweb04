@@ -1,1084 +1,868 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>BAKERY HOUSE</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Shop</title>
+    <link rel="shortcut icon" href="./images/donut.png" type="image/png"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background-color: #f8f5ee;
-        color: #29231e;
-        font-family: "Kanit", sans-serif;
-      }
-
-      /* =========================================
-       NAVBAR
-    ========================================= */
-
-      .navbar {
-        width: 100%;
-        height: 70px;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        padding: 0 8%;
-
-        background: #fffdf8;
-
-        border-bottom: 1px solid #e8e0d5;
-
-        position: relative;
-        z-index: 10;
-      }
-
-      .logo {
-        font-family: "Playfair Display", serif;
-        font-size: 25px;
-        font-weight: 700;
-        color: #4c1f18;
-        text-decoration: none;
-      }
-
-      .logo span {
-        display: block;
-
-        font-family: "Kanit", sans-serif;
-
-        font-size: 8px;
-
-        letter-spacing: 3px;
-
-        text-align: center;
-
-        color: #92705c;
-      }
-
-      .menu {
-        display: flex;
-        gap: 30px;
-      }
-
-      .menu a {
-        color: #5b4b42;
-        text-decoration: none;
-
-        font-size: 12px;
-      }
-
-      .menu a:hover {
-        color: #9a3c29;
-      }
-
-      .nav-icons {
-        display: flex;
-        gap: 15px;
-      }
-
-      .nav-icons a {
-        color: #5b4b42;
-        font-size: 15px;
-      }
-
-      /* =========================================
-       HERO
-    ========================================= */
-
-      .hero {
-        height: 420px;
-
-        position: relative;
-
-        display: flex;
-        align-items: center;
-
-        overflow: hidden;
-
-        background:
-          linear-gradient(
-            90deg,
-            rgba(20, 15, 12, 0.82),
-            rgba(20, 15, 12, 0.35),
-            rgba(20, 15, 12, 0.05)
-          ),
-          url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=85");
-
-        background-size: cover;
-        background-position: center;
-      }
-
-      .hero-content {
-        width: 50%;
-
-        margin-left: 9%;
-
-        color: white;
-      }
-
-      .hero-small {
-        font-size: 13px;
-
-        letter-spacing: 3px;
-
-        margin-bottom: 10px;
-
-        color: #e5c7a6;
-      }
-
-      .hero h1 {
-        font-family: "Playfair Display", serif;
-
-        font-size: 48px;
-
-        line-height: 1.1;
-
-        margin-bottom: 15px;
-      }
-
-      .hero p {
-        max-width: 430px;
-
-        font-size: 12px;
-
-        line-height: 1.8;
-
-        color: rgba(255, 255, 255, 0.85);
-      }
-
-      .hero-btn {
-        display: inline-block;
-
-        margin-top: 22px;
-
-        padding: 9px 24px;
-
-        background: #8e3927;
-
-        color: white;
-
-        text-decoration: none;
-
-        font-size: 11px;
-
-        border-radius: 2px;
-      }
-
-      .hero-btn:hover {
-        background: #672519;
-      }
-
-      /* =========================================
-       SECTION
-    ========================================= */
-
-      .section {
-        max-width: 1100px;
-
-        margin: auto;
-
-        padding: 55px 40px;
-      }
-
-      .section-title {
-        text-align: center;
-
-        margin-bottom: 30px;
-      }
-
-      .section-title small {
-        display: block;
-
-        color: #9a725e;
-
-        font-size: 10px;
-
-        letter-spacing: 2px;
-
-        margin-bottom: 5px;
-      }
-
-      .section-title h2 {
-        font-family: "Playfair Display", serif;
-
-        font-size: 28px;
-
-        color: #492219;
-      }
-
-      .section-title p {
-        margin-top: 5px;
-
-        font-size: 10px;
-
-        color: #8c7d73;
-      }
-
-      /* =========================================
-       BREAD PRODUCTS
-    ========================================= */
-
-      .product-grid {
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 12px;
-      }
-
-      .product-card {
-        background: white;
-
-        border: 1px solid #e5ddd2;
-
-        padding-bottom: 12px;
-
-        transition: 0.3s;
-      }
-
-      .product-card:hover {
-        transform: translateY(-4px);
-
-        box-shadow: 0 8px 20px rgba(50, 30, 20, 0.1);
-      }
-
-      .product-image {
-        width: 100%;
-        height: 190px;
-
-        object-fit: cover;
-
-        display: block;
-      }
-
-      .product-info {
-        padding: 10px 12px;
-      }
-
-      .product-info h3 {
-        font-family: "Playfair Display", serif;
-
-        font-size: 15px;
-
-        color: #4b241a;
-      }
-
-      .product-info p {
-        font-size: 8px;
-
-        color: #8b7d73;
-
-        margin: 3px 0 7px;
-      }
-
-      .price {
-        color: #8d3524;
-
-        font-size: 11px;
-
-        font-weight: 500;
-      }
-
-      /* =========================================
-       PROMOTION BANNER
-    ========================================= */
-
-      .promo {
-        min-height: 230px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        text-align: center;
-
-        margin: 20px 0;
-
-        background:
-          linear-gradient(rgba(244, 233, 216, 0.9), rgba(244, 233, 216, 0.9)),
-          url("https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=1400&q=80");
-
-        background-size: cover;
-
-        background-position: center;
-
-        border-top: 1px solid #dfd1c1;
-
-        border-bottom: 1px solid #dfd1c1;
-      }
-
-      .promo-content {
-        max-width: 550px;
-      }
-
-      .promo-content small {
-        color: #9a3c29;
-
-        font-size: 10px;
-
-        letter-spacing: 2px;
-      }
-
-      .promo-content h2 {
-        font-family: "Playfair Display", serif;
-
-        font-size: 31px;
-
-        color: #68291d;
-
-        margin: 5px 0;
-      }
-
-      .promo-content p {
-        color: #76675e;
-
-        font-size: 10px;
-      }
-
-      .promo-btn {
-        display: inline-block;
-
-        margin-top: 15px;
-
-        padding: 8px 22px;
-
-        background: #793021;
-
-        color: white;
-
-        text-decoration: none;
-
-        font-size: 9px;
-      }
-
-      /* =========================================
-       CAKE SECTION
-    ========================================= */
-
-      .cake-grid {
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 12px;
-      }
-
-      .cake-card {
-        background: white;
-
-        border: 1px solid #e5ddd2;
-      }
-
-      .cake-card img {
-        width: 100%;
-
-        height: 175px;
-
-        object-fit: cover;
-
-        display: block;
-      }
-
-      .cake-info {
-        padding: 10px 12px;
-      }
-
-      .cake-info h3 {
-        font-family: "Playfair Display", serif;
-
-        font-size: 14px;
-
-        color: #4b241a;
-      }
-
-      .cake-info p {
-        font-size: 8px;
-
-        color: #8c7d73;
-
-        margin-top: 3px;
-      }
-
-      /* =========================================
-       BREAD BANNER
-    ========================================= */
-
-      .bread-banner {
-        min-height: 210px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        text-align: center;
-
-        background:
-          linear-gradient(rgba(52, 28, 19, 0.72), rgba(52, 28, 19, 0.72)),
-          url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1500&q=80");
-
-        background-size: cover;
-
-        background-position: center;
-
-        color: white;
-      }
-
-      .bread-banner h2 {
-        font-family: "Playfair Display", serif;
-
-        font-size: 29px;
-
-        margin-bottom: 5px;
-      }
-
-      .bread-banner p {
-        font-size: 10px;
-
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      .bread-banner a {
-        display: inline-block;
-
-        margin-top: 15px;
-
-        padding: 7px 20px;
-
-        border: 1px solid #e4c5a1;
-
-        color: white;
-
-        text-decoration: none;
-
-        font-size: 9px;
-      }
-
-      /* =========================================
-       SPECIAL MENU
-    ========================================= */
-
-      .special-grid {
-        display: grid;
-
-        grid-template-columns: repeat(4, 1fr);
-
-        gap: 12px;
-      }
-
-      .special-card {
-        position: relative;
-
-        overflow: hidden;
-
-        background: white;
-      }
-
-      .special-card img {
-        width: 100%;
-
-        height: 170px;
-
-        object-fit: cover;
-
-        display: block;
-      }
-
-      .special-info {
-        padding: 9px;
-
-        text-align: center;
-      }
-
-      .special-info h3 {
-        font-family: "Playfair Display", serif;
-
-        font-size: 13px;
-
-        color: #4b241a;
-      }
-
-      .special-info span {
-        color: #913a28;
-
-        font-size: 9px;
-      }
-
-      /* =========================================
-       FOOTER
-    ========================================= */
-
-      .footer {
-        background: #211713;
-
-        color: white;
-
-        padding: 40px 8% 15px;
-      }
-
-      .footer-content {
-        max-width: 1100px;
-
-        margin: auto;
-
-        display: grid;
-
-        grid-template-columns: 1.5fr 1fr 1fr 1fr;
-
-        gap: 40px;
-      }
-
-      .footer-logo {
-        font-family: "Playfair Display", serif;
-
-        font-size: 23px;
-
-        color: #e8c8a7;
-      }
-
-      .footer-column h3 {
-        font-size: 11px;
-
-        margin-bottom: 12px;
-
-        color: #e8c8a7;
-      }
-
-      .footer-column p,
-      .footer-column a {
-        display: block;
-
-        color: rgba(255, 255, 255, 0.65);
-
-        font-size: 8px;
-
-        line-height: 2;
-
-        text-decoration: none;
-      }
-
-      .footer-column a:hover {
-        color: white;
-      }
-
-      .footer-social {
-        display: flex;
-
-        gap: 12px;
-
-        margin-top: 10px;
-      }
-
-      .footer-social a {
-        font-size: 13px;
-      }
-
-      .copyright {
-        max-width: 1100px;
-
-        margin: 30px auto 0;
-
-        padding-top: 15px;
-
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-
-        text-align: center;
-
-        font-size: 7px;
-
-        color: rgba(255, 255, 255, 0.4);
-      }
-
-      /* =========================================
-       RESPONSIVE
-    ========================================= */
-
-      @media (max-width: 800px) {
-        .navbar {
-          padding: 0 25px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display,Oswald', sans-serif;
         }
-
-        .menu {
-          display: none;
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 300%;
+            min-height: 900px;
+            background-color: #121212; 
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%),url('./images/Image-high.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 35px 8% 80px 8%;
+            color: #ffffff;
         }
-
-        .hero {
-          height: 360px;
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 45px;
+            width: 100%;
         }
-
+        .logo img {
+            height: 160px;
+            display: block;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav a {
+            color: rgb(232, 232, 119);
+            font-family: Oswald;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        nav a:hover {
+            color: orange;
+        }
         .hero-content {
-          width: 80%;
-
-          margin-left: 8%;
+            max-width: 520px;
+            margin-top: auto;
+            margin-bottom: auto;
         }
-
-        .hero h1 {
-          font-size: 38px;
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgb(232, 232, 119);
+            font-family: Oswald;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 0.px;
         }
-
-        .product-grid,
-        .cake-grid {
-          grid-template-columns: repeat(2, 1fr);
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700; 
+            font-size: 5.0rem;
+            line-height: 1.12;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
-
-        .special-grid {
-          grid-template-columns: repeat(2, 1fr);
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 22px;
         }
-
-        .footer-content {
-          grid-template-columns: repeat(2, 1fr);
+        .btn-shop {
+            background-color: #933c2d; 
+            color: #ffffff;
+            font-family: Oswald;
+            padding: 11px 28px;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            display: inline-block;
+            transition: background-color 0.3s;
         }
-      }
-
-      @media (max-width: 550px) {
-        .hero h1 {
-          font-size: 31px;
+        .btn-shop:hover {
+            background-color: #792f22;
         }
-
-        .section {
-          padding: 40px 20px;
+        .btn-learn {
+            color:rgb(232, 232, 119);
+            font-family: Oswald;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 350;
+            opacity: 0.9;
         }
-
-        .product-grid,
-        .cake-grid,
-        .special-grid {
-          grid-template-columns: 1fr 1fr;
+        .btn-learn:hover {
+            opacity: 1;
+            text-decoration: underline;
         }
-
+      .top-products-section {
+            width: 100%;
+            background-color: #ffffff; 
+            padding: 60px 8% 80px 8%;
+            display: block;
+            clear: both;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 440;
+            font-size: 4.5rem;
+            color: #b60707;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:30px;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background-image: url(./images/backgr04.png);
+            border-radius: 8px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
         .product-image {
-          height: 140px;
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .info-row-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price {
+            color: #ffffff;
+            font-family: Oswald;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #777777;
+            border-radius: 50%;
+            color: #aaaaaa;
+            font-size: 0.75rem;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+        }
+        .info-row-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product-name {
+            color: #d0d0d0;
+            font-family: Oswald;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .btn-add {
+            background-color: #933c2d;
+            color: #ffffff;
+            border: none;
+            padding: 6px 18px;
+            border-radius: 4px;
+            font-family: Oswald;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        @media (max-width: 900px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        .cake-card img {
-          height: 140px;
+        @media (max-width: 600px) {
+            .products-grid { grid-template-columns: 1fr; }
+        }
+        .promo-section {
+           width: 100vw;              
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;        
+            margin-right: -50vw;
+            
+            margin-top: 60px;          
+            
+            min-height: 420px;          
+            background-color: #1e1e1e;
+            background-image: url('./images/image03.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 40px;
+        }
+        .promo-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #8c3f2d; 
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .promo-description {
+            font-size: 1.05rem;
+            color: #555555;
+            max-width: 480px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        .btn-promo {
+            background-color: #8c3f2d;
+            color: #ffffff;
+            padding: 12px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: Oswald;
+            font-size: 1rem;
+            font-weight: 400;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .btn-promo:hover {
+            background-color: #723122;
+        }
+        .explore-section {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 50px 8% 80px 8%;
+            text-align: center;
+        }
+        .explore-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: #000000;
+            margin-bottom: 30px;
+        }
+        .category-container {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            border-bottom: 1px solid #e0e0e0; 
+        }
+        .category-menu {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            list-style: none;
+            padding: 0 0 12px 0;
+            margin: 0;
+        }
+        .category-menu a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding-bottom: 12px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .category-menu a.active {
+            color: #222222;
+        }
+        .category-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; 
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #8c3f2d; 
+            border-radius: 2px;
+        }
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .explore-card {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px; 
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        }
+        .explore-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .explore-card:hover img {
+            transform: scale(1.04); 
+        }
+        @media (max-width: 900px) {
+            .explore-grid { grid-template-columns: repeat(2, 1fr); }
+            .category-menu { gap: 20px; font-size: 0.88rem; }
+        }
+        @media (max-width: 600px) {
+            .explore-grid { grid-template-columns: 1fr; }
+            .category-menu { flex-wrap: wrap; gap: 12px 18px; }
+        }
+        .about-section {
+            width: 100vw;              
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;        
+            margin-right: -50vw;
+            margin-top: 60px;          
+            min-height: 420px;          
+            background-color: #1e1e1e;
+            background-image: url('./images/backgr03.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            color: #ffffff;
+        }
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 18px;
+        }
+        .about-description {
+            font-size: 1.05rem;
+            color: #e0e0e0;
+            max-width: 520px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+            font-weight: 300;
+        }
+        .btn-about {
+            background-color: #8c3f2d;
+            color: #ffffff;
+            font-family: Oswald;
+            padding: 12px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .btn-about:hover {
+            background-color: #723122;
+        }
+        .featured-section {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 60px 8% 80px 8%;
+            text-align: center;
+        }
+        .featured-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: #000000;
+            margin-bottom: 40px;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .featured-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+        .featured-image {
+            width: 100%;
+            height: 260px;
+            border-radius: 12px; 
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .featured-card:hover .featured-image img {
+            transform: scale(1.04);
+        }
+        .featured-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4px;
         }
 
-        .special-card img {
-          height: 130px;
+        .featured-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #000000;
+        }
+        .featured-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #000000;
+        }
+        @media (max-width: 900px) {
+            .featured-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .featured-grid { grid-template-columns: 1fr; }
+        }
+        .footer-section {
+            width: 100vw;               
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;        
+            margin-right: -50vw;
+            
+            background-color: #141414;
+            background-image: url('./images/backgr04.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            color: #ffffff;
+            padding: 50px 8% 30px 8%;
+        }
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15); 
+            margin-bottom: 40px;
+        }
+        .footer-logo img {
+            height: 200px;
+            display: block;
+        }
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .footer-social span {
+            font-size: 2.1rem;
+            font-family: Oswald;
+            color: #d8b08c;
+            font-weight: 500;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #d8b08c; 
+            color: #141414;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background-color: #ffffff;
+        }
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 50px auto;
+        }
+        .footer-col h3 {
+            font-size: 3rem;
+            font-family: Oswald;
+            font-weight: 600;
+            color: #d8b08c; 
+            margin-bottom: 20px;
+        }
+        .footer-col p {
+            font-size: 1rem;
+            font-family: Oswald;
+            color: #dddddd;
+            line-height: 1.7;
+            margin-bottom: 4px;
+            font-weight: 300;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #ffffff;
+            font-family: Oswald;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #d8b08c;
+        }
+        .news-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 16px;
+        }
+        .news-thumb {
+            width: 65px;
+            height: 50px;
+            border-radius: 4px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .news-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .news-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .news-date {
+            font-size: 1rem;
+            font-family: Oswald;
+            color: #aaaaaa;
+            margin-bottom: 2px;
+        }
+        .news-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: Oswald;
+            color: #ffffff;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            font-size: 1rem;
+            color: #888888;
+        }
+        @media (max-width: 850px) {
+            .footer-main { grid-template-columns: repeat(2, 1fr); }
         }
 
-        .footer-content {
-          grid-template-columns: 1fr 1fr;
+        @media (max-width: 550px) {
+            .footer-top { flex-direction: column; gap: 20px; text-align: center; }
+            .footer-main { grid-template-columns: 1fr; }
         }
-      }
     </style>
-  </head>
+    </head>
+    <body>
+    <section class="hero-section">
+        <header>
+            <div class="logo">
+                <img src="./images/icon01.png" alt="Keithston Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="hero-content">
+            <p class="hero-subtitle">Delicious Cafe</p>
+            <h1 class="hero-title">Sweet Treats,<br>Perfect Eats</h1>
+            <div class="hero-buttons">
+                <a href="#" class="btn-shop">Shop Now</a>
+                <a href="#" class="btn-learn">Learn More</a>
+            </div>
+        </div>
+    </section>
+        <div class="top-products-section">
+        <h2 class="section-title">Top Products</h2>
+        <div class="products-grid">
 
-  <body>
-    <!-- =========================================
-       NAVBAR
-  ========================================== -->
+            <div class="product-card">
+                <div class="product-image"><img src="./images/bread01.png" alt="Whole Grain Bread"></div>
+                <div class="product-info">
+                    <div class="info-row-top"><span class="price">40 Baht</span><span class="info-icon">i</span></div>
+                    <div class="info-row-bottom"><span class="product-name">Whole Grain Bread</span><button class="btn-add">Add</button></div>
+                </div>
+            </div>
 
-    <nav class="navbar">
-      <a href="#" class="logo">
-        BAKERY
-        <span>HOUSE</span>
-      </a>
+            <div class="product-card">
+                <div class="product-image"><img src="./images/bread02.png" alt="Whole Grain Bread"></div>
+                <div class="product-info">
+                    <div class="info-row-top"><span class="price">40 Baht</span><span class="info-icon">i</span></div>
+                    <div class="info-row-bottom"><span class="product-name">Whole Grain Bread</span><button class="btn-add">Add</button></div>
+                </div>
+            </div>
 
-      <div class="menu">
-        <a href="#home">หน้าหลัก</a>
-        <a href="#bread">ขนมปัง</a>
-        <a href="#cake">เค้ก</a>
-        <a href="#special">เมนูพิเศษ</a>
-        <a href="#contact">ติดต่อเรา</a>
-      </div>
+            <div class="product-card">
+                <div class="product-image"><img src="./images/bread03.png" alt="Whole Grain Bread"></div>
+                <div class="product-info">
+                    <div class="info-row-top"><span class="price">40 Baht</span><span class="info-icon">i</span></div>
+                    <div class="info-row-bottom"><span class="product-name">Whole Grain Bread</span><button class="btn-add">Add</button></div>
+                </div>
+            </div>
 
-      <div class="nav-icons">
-        <a href="#">
-          <i class="bi bi-search"></i>
-        </a>
+            <div class="product-card">
+                <div class="product-image"><img src="./images/bread04.png" alt="Whole Grain Bread"></div>
+                <div class="product-info">
+                    <div class="info-row-top"><span class="price">40 Baht</span><span class="info-icon">i</span></div>
+                    <div class="info-row-bottom"><span class="product-name">Whole Grain Bread</span><button class="btn-add">Add</button></div>
+                </div>
+            </div>
 
-        <a href="#">
-          <i class="bi bi-bag"></i>
-        </a>
-      </div>
-    </nav>
+            <div class="product-card">
+                <div class="product-image"><img src="./images/bread05.png" alt="Whole Grain Bread"></div>
+                <div class="product-info">
+                    <div class="info-row-top"><span class="price">40 Baht</span><span class="info-icon">i</span></div>
+                    <div class="info-row-bottom"><span class="product-name">Whole Grain Bread</span><button class="btn-add">Add</button></div>
+                </div>
+            </div>
 
-    <!-- =========================================
-       HERO
-  ========================================== -->
+            <div class="product-card">
+                <div class="product-image"><img src="./images/bread06.png" alt="Whole Grain Bread"></div>
+                <div class="product-info">
+                    <div class="info-row-top"><span class="price">40 Baht</span><span class="info-icon">i</span></div>
+                    <div class="info-row-bottom"><span class="product-name">Whole Grain Bread</span><button class="btn-add">Add</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <div class="hero-small">FRESH BAKERY</div>
-
-        <h1>
-          Fresh Bread<br />
-          Every Morning
-        </h1>
-
-        <p>
-          ขนมปังอบสดใหม่ทุกวัน คัดสรรวัตถุดิบคุณภาพ
-          เพื่อส่งมอบความอร่อยและความสุข ให้กับทุกคน
+    <section class="promo-section">
+        <h2 class="promo-title">20% Off Your First Order</h2>
+        <p class="promo-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Nesciunt rem.
         </p>
+        <a href="#" class="btn-promo">Learn More</a>
+    </section>
+    <section class="explore-section">
+        <h2 class="explore-title">Explore More</h2>
 
-        <a href="#bread" class="hero-btn"> ดูเมนูของเรา </a>
-      </div>
+
+        <div class="category-container">
+            <ul class="category-menu">
+                <li><a href="#" class="active">Cake</a></li>
+                <li><a href="#">Muffins</a></li>
+                <li><a href="#">Croissant</a></li>
+                <li><a href="#">Bread</a></li>
+                <li><a href="#">Tart</a></li>
+                <li><a href="#">Favorite</a></li>
+            </ul>
+        </div>
+
+
+        <div class="explore-grid">
+            <div class="explore-card">
+                <img src="./images/image001.png" alt="Cake 1">
+            </div>
+            <div class="explore-card">
+                <img src="./images/image002.png" alt="Cake 2">
+            </div>
+            <div class="explore-card">
+                <img src="./images/image003.png" alt="Cake 3">
+            </div>
+            <div class="explore-card">
+                <img src="./images/image004.png" alt="Cake 4">
+            </div>
+            <div class="explore-card">
+                <img src="./images/image005.png" alt="Cake 5">
+            </div>
+            <div class="explore-card">
+                <img src="./images/image006.png" alt="Cake 6">
+            </div>
+        </div>
     </section>
 
-    <!-- =========================================
-       BREAD
-  ========================================== -->
-
-    <section class="section" id="bread">
-      <div class="section-title">
-        <small>OUR BAKERY</small>
-
-        <h2>ขนมปังของเรา</h2>
-
-        <p>อบสดใหม่ทุกวัน หอม นุ่ม อร่อย</p>
-      </div>
-
-      <div class="product-grid">
-        <div class="product-card">
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1585478259715-876acc5be8eb?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="product-info">
-            <h3>Classic Bread</h3>
-            <p>ขนมปังคลาสสิกเนื้อนุ่ม</p>
-            <span class="price">฿65</span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="product-info">
-            <h3>Fresh Croissant</h3>
-            <p>ครัวซองต์อบใหม่หอมกรอบ</p>
-            <span class="price">฿85</span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="product-info">
-            <h3>Chocolate Bread</h3>
-            <p>ขนมปังช็อกโกแลตเข้มข้น</p>
-            <span class="price">฿75</span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="product-info">
-            <h3>French Baguette</h3>
-            <p>บาแก็ตสไตล์ฝรั่งเศส</p>
-            <span class="price">฿90</span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="product-info">
-            <h3>Sweet Bun</h3>
-            <p>ขนมปังหวานเนื้อนุ่ม</p>
-            <span class="price">฿55</span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="product-info">
-            <h3>Butter Bread</h3>
-            <p>ขนมปังเนยหอมละมุน</p>
-            <span class="price">฿70</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================
-       PROMOTION
-  ========================================== -->
-
-    <section class="promo">
-      <div class="promo-content">
-        <small>BAKERY SPECIAL</small>
-
-        <h2>อบสดใหม่ทุกวัน</h2>
-
-        <p>
-          พบกับขนมปังและเบเกอรี่หลากหลายชนิด ที่เราตั้งใจทำด้วยความพิถีพิถัน
+    <section class="about-section">
+        <h2 class="about-title">About us</h2>
+        <p class="about-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Nesciunt rem odit labore unde<br>
+            nemo omnis sequi.
         </p>
-
-        <a href="#special" class="promo-btn"> VIEW MENU </a>
-      </div>
+        <a href="#" class="btn-about">Read More</a>
     </section>
 
-    <!-- =========================================
-       CAKE
-  ========================================== -->
+    <section class="featured-section">
+        <h2 class="featured-title">Featured Treats</h2>
+        <div class="featured-grid">
 
-    <section class="section" id="cake">
-      <div class="section-title">
-        <small>CAKE COLLECTION</small>
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="./images/image007.png" alt="Puff Pastry">
+                </div>
+                <div class="featured-info">
+                    <span class="featured-name">Puff Pastry</span>
+                    <span class="featured-price">8 Baht</span>
+                </div>
+            </div>
 
-        <h2>เค้กของเรา</h2>
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="./images/image008.png" alt="Doughnuts">
+                </div>
+                <div class="featured-info">
+                    <span class="featured-name">Doughnuts</span>
+                    <span class="featured-price">8 Baht</span>
+                </div>
+            </div>
 
-        <p>เค้กสำหรับทุกโอกาสพิเศษ</p>
-      </div>
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="./images/image009.png" alt="Brownies">
+                </div>
+                <div class="featured-info">
+                    <span class="featured-name">Brownies</span>
+                    <span class="featured-price">8 Baht</span>
+                </div>
+            </div>
 
-      <div class="cake-grid">
-        <div class="cake-card">
-          <img
-            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="cake-info">
-            <h3>Chocolate Cake</h3>
-
-            <p>เค้กช็อกโกแลตเข้มข้น</p>
-          </div>
         </div>
-
-        <div class="cake-card">
-          <img
-            src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="cake-info">
-            <h3>Strawberry Cake</h3>
-
-            <p>เค้กสตรอว์เบอร์รีสด</p>
-          </div>
-        </div>
-
-        <div class="cake-card">
-          <img
-            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="cake-info">
-            <h3>Caramel Cake</h3>
-
-            <p>เค้กคาราเมลหอมหวาน</p>
-          </div>
-        </div>
-
-        <div class="cake-card">
-          <img
-            src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="cake-info">
-            <h3>Berry Cake</h3>
-
-            <p>เค้กเบอร์รีรวม</p>
-          </div>
-        </div>
-
-        <div class="cake-card">
-          <img
-            src="https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="cake-info">
-            <h3>Red Velvet</h3>
-
-            <p>เรดเวลเวทเนื้อนุ่ม</p>
-          </div>
-        </div>
-
-        <div class="cake-card">
-          <img
-            src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6c?auto=format&fit=crop&w=700&q=80"
-          />
-
-          <div class="cake-info">
-            <h3>Fruit Cake</h3>
-
-            <p>เค้กผลไม้สด</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- =========================================
-       BREAD BANNER
-  ========================================== -->
+    <footer class="footer-section">
 
-    <section class="bread-banner">
-      <div>
-        <h2>Homemade Bakery</h2>
-
-        <p>ความอร่อยที่ทำด้วยความตั้งใจ</p>
-
-        <a href="#contact"> ORDER NOW </a>
-      </div>
-    </section>
-
-    <!-- =========================================
-       SPECIAL MENU
-  ========================================== -->
-
-    <section class="section" id="special">
-      <div class="section-title">
-        <small>OUR SPECIAL</small>
-
-        <h2>เมนูแนะนำ</h2>
-
-        <p>เมนูพิเศษที่อยากให้คุณลอง</p>
-      </div>
-
-      <div class="special-grid">
-        <div class="special-card">
-          <img
-            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80"
-          />
-
-          <div class="special-info">
-            <h3>Fresh Bread</h3>
-
-            <span>฿65</span>
-          </div>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="./images/icon01.png" alt="KEITHSTON Logo">
+            </div>
+            <div class="footer-social">
+                <span>Follow us</span>
+                <div class="social-icons">
+                    <a href="#"class="social-icon"><i class="bi-facebook"></i></a>
+                    <a href="#"class="social-icon"><i class="bi-pinterest"></i></a>
+                    <a href="#"class="social-icon"><i class="bi-whatsapp"></i></a>
+                    <a href="#"class="social-icon"><i class="bi-instagram"></i></a>
+                </div>
+            </div>
         </div>
 
-        <div class="special-card">
-          <img
-            src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=600&q=80"
-          />
+        <div class="footer-main">
 
-          <div class="special-info">
-            <h3>Berry Tart</h3>
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>(02) 807-4500</p>
+                <p>info@sau.ac.th</p>
+                <p>19/1 Phetkasem Road</p>
+                <p>Nongkham Bangkok</p>
+                <p>10160</p>
+            </div>
 
-            <span>฿95</span>
-          </div>
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Recent News</h3>
+            
+                <div class="news-item">
+                    <div class="news-thumb">
+                        <img src="./images/image010.png" alt="Puff pastry bliss">
+                    </div>
+                    <div class="news-info">
+                        <span class="news-date">June 14, 2025</span>
+                        <span class="news-title">Puff pastry bliss.</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-thumb">
+                        <img src="./images/image011.png" alt="Puff pastry bliss">
+                    </div>
+                    <div class="news-info">
+                        <span class="news-date">June 14, 2025</span>
+                        <span class="news-title">Puff pastry bliss.</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="special-card">
-          <img
-            src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=600&q=80"
-          />
-
-          <div class="special-info">
-            <h3>Chocolate Bun</h3>
-
-            <span>฿75</span>
-          </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NinJa-Bake House. All rights reserved</p>
         </div>
-
-        <div class="special-card">
-          <img
-            src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=600&q=80"
-          />
-
-          <div class="special-info">
-            <h3>Sweet Bread</h3>
-
-            <span>฿60</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================
-       FOOTER
-  ========================================== -->
-
-    <footer class="footer" id="contact">
-      <div class="footer-content">
-        <div class="footer-column">
-          <div class="footer-logo">BAKERY HOUSE</div>
-
-          <p>Homemade bakery made with love.</p>
-
-          <div class="footer-social">
-            <a href="#">
-              <i class="bi bi-facebook"></i>
-            </a>
-
-            <a href="#">
-              <i class="bi bi-instagram"></i>
-            </a>
-
-            <a href="#">
-              <i class="bi bi-line"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h3>MENU</h3>
-
-          <a href="#home">หน้าหลัก</a>
-          <a href="#bread">ขนมปัง</a>
-          <a href="#cake">เค้ก</a>
-          <a href="#special">เมนูพิเศษ</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>CONTACT</h3>
-
-          <p>099-999-9999</p>
-
-          <p>bakeryhouse@email.com</p>
-
-          <p>Bangkok, Thailand</p>
-        </div>
-
-        <div class="footer-column">
-          <h3>OPENING HOURS</h3>
-
-          <p>Mon - Fri : 08:00 - 19:00</p>
-
-          <p>Sat - Sun : 09:00 - 20:00</p>
-        </div>
-      </div>
-
-      <div class="copyright">© 2026 Bakery House. All Rights Reserved.</div>
     </footer>
-  </body>
+</body>
 </html>
